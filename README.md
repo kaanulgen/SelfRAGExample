@@ -1,4 +1,4 @@
-# Self-RAG Implementation with LangChain & LangGraph
+# ArXiv Makaleleri İçin Self-RAG Tabanlı Soru-Cevap Sistemi
 
 Çoklu LLM desteği (OpenAI & Gemini) sunan, YAML ile yapılandırılabilen Self-RAG sistemi.
 ## Amaç

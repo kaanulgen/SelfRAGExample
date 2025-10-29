@@ -1,0 +1,13 @@
+beautifulsoup4==4.12.3
+langchain==0.2.7
+langgraph>=0.2.0,<0.3.0
+langchainhub==0.1.20
+langchain-community==0.2.7
+tavily-python==0.3.4
+langchain-chroma==0.1.2
+python-dotenv==1.0.1
+pytest==8.2.2
+langchain-openai==0.1.16
+# Yeni eklenenler:
+arxiv>=2.1.0,<3.0.0 # veya spesifik bir sürüm: arxiv==2.1.0
+pymupdf==1.23.9 # veya spesifik bir sürüm: pymupdf==1.24.3

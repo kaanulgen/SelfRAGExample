@@ -1,0 +1,70 @@
+# Self-RAG Configuration File
+
+# LLM Provider: "openai" veya "gemini"
+llm_provider: "openai"
+
+# OpenAI Configuration
+openai:
+  model: "gpt-4o-mini"
+  temperature: 0
+  api_key_env: "OPENAI_API_KEY"
+  embedding_model: "text-embedding-3-small"
+
+# Gemini Configuration
+gemini:
+  model: "gemini-2.0-flash-exp"
+  temperature: 0
+  api_key_env: "GEMINI_API_KEY"
+  embedding_model: "models/text-embedding-004"
+
+# Vector Store Configuration
+vector_store:
+  collection_name: "rag-chroma"
+  chunk_size: 2000
+  chunk_overlap: 100
+  persist_directory: "./chroma_db"
+
+# Data Sources
+data_sources:
+  arxiv_ids:
+    - "2310.11511"  # Self-RAG paper
+    - "2403.14403"  # Adaptive-RAG
+    - "2401.15884"  # Corrective-RAG
+    - "2205.10669"  # IfE
+
+# Retrieval Configuration
+retrieval:
+  top_k: 6
+  similarity_threshold: 0.5
+
+# Grading Prompts
+prompts:
+  retrieval_grader: |
+    You are a grader assessing relevance of a retrieved document to a user question.
+    It does not need to be a stringent test. The goal is to filter out erroneous retrievals.
+    If the document contains keyword(s) or semantic meaning related to the user question, grade it as relevant.
+    Give a binary score 'yes' or 'no' score to indicate whether the document is relevant to the question.
+
+  hallucination_grader: |
+    You are a grader assessing whether an LLM generation is grounded in / supported by a set of retrieved facts.
+    Give a binary score 'yes' or 'no'. 'Yes' means that the answer is grounded in / supported by the set of facts.
+
+  answer_grader: |
+    You are a grader assessing whether an answer addresses / resolves a question.
+    Give a binary score 'yes' or 'no'. 'Yes' means that the answer resolves the question.
+
+  question_rewriter: |
+    You are a question re-writer that converts an input question to a better version that is optimized
+    for vectorstore retrieval. Look at the input and try to reason about the underlying semantic intent / meaning.
+
+# Test Questions
+test_questions:
+  - "From which dataset did they identify isolated elliptical galaxies?"
+  #- "What is the main contribution of the SELF-RAG paper?"
+  #- "Explain how the different types of agent memory work?"
+  #- "Explain how chain of thought prompting works?"
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

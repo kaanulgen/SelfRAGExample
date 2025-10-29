@@ -73,7 +73,7 @@ python main.py custom_config.yaml
   <img src="langgraph_diagram.png" alt="LangGraph Workflow" width="700"/>
 </div>
 
-### 🔄 Workflow Aşamaları
+### Workflow Aşamaları
 
 | Aşama | Açıklama | ArXiv'deki Rolü |
 |-------|----------|-----------------|
@@ -85,7 +85,7 @@ python main.py custom_config.yaml
 | **TRANSFORM QUERY** | Soruyu yeniden yaz | ArXiv retrieval için optimize eder |
 
 
-## 📄 ArXiv Makaleleri ile Çalışma
+## ArXiv Makaleleri ile Çalışma
 
 ### Desteklenen ArXiv Papers
 
@@ -117,7 +117,7 @@ rm -rf ./chroma_db
 
 
 
-## 📊 Örnek Çıktı
+## Örnek Çıktı
 
 ```
 ================================================================================
@@ -128,8 +128,8 @@ QUESTION: From which dataset did they identify isolated elliptical galaxies?
 ---CHECK DOCUMENT RELEVANCE TO QUESTION---
 ---GRADE: DOCUMENT RELEVANT--- (6/6)
 ---GENERATE---
----CHECK HALLUCINATIONS--- ✅ Grounded
----GRADE GENERATION vs QUESTION--- ✅ Addresses question
+---CHECK HALLUCINATIONS---  Grounded
+---GRADE GENERATION vs QUESTION---  Addresses question
 
 ================================================================================
 FINAL GENERATION:
@@ -139,14 +139,14 @@ of the Canada-France-Hawaii Telescope Legacy Survey (CFHTLS).
 A flux-limited galaxy catalogue was used to identify 228 IfEs.
 ```
 
-## 🔧 Desteklenen LLM Providers
+## Desteklenen LLM Providers
 
 | Provider | Model | Embedding Model |
 |----------|-------|-----------------|
 | OpenAI | gpt-4o-mini | text-embedding-3-small |
 | Google Gemini | gemini-2.0-flash-exp | text-embedding-004 |
 
-## 📝 Notlar
+## Notlar
 
 - **Gemini Free Tier:** Dakikada 10 istek limiti vardır. Yüksek `top_k` değerleri rate limit'e takılabilir.
 - **Chroma DB:** Provider değiştirdiğinizde `./chroma_db` klasörünü temizleyin veya farklı collection isimleri kullanın.
